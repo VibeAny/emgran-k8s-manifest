@@ -30,6 +30,7 @@
 - [x] Cold-start content plan (Japan + Thailand) [drafted]
 - [x] Newsletter template (weekly deals) (bops draft received)
 - [ ] Example deal alerts + itineraries for Skill demo
+- [ ] Toutiao (今日头条) account growth plan for AI/OpenClaw use-cases (bops)
 
 ## Business & Legal
 **Priority: P2**
