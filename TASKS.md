@@ -7,7 +7,7 @@
 **Priority: P0**
 - [x] Finalize MVP spec with skills-first distribution baked in (architect draft received)
 - [x] Define data sources + affiliate programs shortlist (ops/ba drafts received)
-- [ ] Build Skill package v0.1 (travel deals + itinerary + disclosure)
+- [ ] Build Skill package v0.1 (travel deals + itinerary + disclosure) — draft skeleton created
 - [x] Create landing page copy for Skill listing (skills-first positioning) (frontend draft received)
 - [ ] Draft disclosure/terms snippets for skills output
 
