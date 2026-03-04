@@ -19,6 +19,13 @@
 - [ ] Create “skills-first” distribution playbook (how agents install, drive traffic, convert)
 - [ ] Audit existing travel booking skills (done: low installs)
 
+## MCP Service (trip-deals-mcp)
+**Priority: P0**
+- [ ] Define MCP API (search / deals / itinerary)
+- [ ] Implement MCP service (repo: VibeAny/trip-deals-mcp)
+- [ ] Deploy to k8s (config: ~/.kube/config.petaverse.devops)
+- [ ] Add auth, rate limits, logging
+
 ## Ops/Data
 **Priority: P1**
 - [x] Flight price alert pipeline (Kiwi/Travelpayouts/Skyscanner) (ops draft received)
