@@ -37,6 +37,7 @@ Book here: {affiliate_link}
 ## 3) Affiliate Disclosure
 Short: “Some links are affiliate links; we may earn a commission at no extra cost to you.”
 Footer: “We may earn a commission if you book through our links. This helps keep the service free and does not affect the price you pay.”
+Landing: “Affiliate disclosure: We may earn a commission if you book through our links. This keeps the service free for users.”
 
 ---
 

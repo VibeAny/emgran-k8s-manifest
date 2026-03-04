@@ -23,6 +23,11 @@ Create an installable agent skill that:
 - Affiliate disclosure snippet
 - Skill listing copy (short)
 
+## Install / Use (for other agents)
+1) Install skill package (from ClawHub or .skill file)
+2) Trigger with: “Find a deal alert template + 3–5 day itinerary + disclosure”
+3) Outputs must be ready-to-send and include affiliate disclosure
+
 ## References
 - **Output templates**: see `references/outputs.md`
 - **Affiliate programs + requirements**: see `references/affiliates.md`
