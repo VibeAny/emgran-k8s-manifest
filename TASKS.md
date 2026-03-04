@@ -10,6 +10,7 @@
 - [ ] Build Skill package v0.1 (travel deals + itinerary + disclosure) — draft skeleton created
 - [x] Create landing page copy for Skill listing (skills-first positioning) (frontend draft received)
 - [ ] Draft disclosure/terms snippets for skills output
+- [ ] Official site IA + key pages (frontend)
 
 ## Distribution (ClawHub + Agent Ecosystem — Core Path)
 **Priority: P0**
@@ -21,7 +22,7 @@
 
 ## MCP Service (trip-deals-mcp)
 **Priority: P0**
-- [ ] Define MCP API (search / deals / itinerary)
+- [ ] Define MCP API (search / deals / itinerary) + tech stack selection (arch)
 - [ ] Implement MCP service (repo: VibeAny/trip-deals-mcp)
 - [ ] Deploy to k8s (config: ~/.kube/config.petaverse.devops)
 - [ ] Add auth, rate limits, logging
