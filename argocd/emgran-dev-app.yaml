@@ -1,0 +1,79 @@
+# ArgoCD Application - Emgran Dev Environment
+# This file defines the ArgoCD Application for automatic deployment to dev
+# 
+# Usage:
+#   kubectl apply -f argocd/emgran-dev-app.yaml
+#   argocd app sync emgran-dev
+#   argocd app get emgran-dev
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: emgran-dev
+  namespace: argocd
+  labels:
+    app: emgran
+    environment: dev
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # Project must exist in ArgoCD
+  project: emgran
+  
+  # Source: Git repository containing K8s manifests
+  source:
+    repoURL: https://github.com/embran-com/k8s-manifest.git
+    targetRevision: main
+    path: dev/
+  
+  # Destination: AKS cluster
+  destination:
+    server: https://aks-devops-cluster.hcp.southeastasia.azmk8s.io
+    namespace: emgran-dev
+  
+  # Sync Policy - Auto-sync for dev environment
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+      - ApplyOutOfSyncOnly=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+  
+  # Health Checks - Custom health assessment for Deployments
+  healthChecks:
+    - group: apps
+      kind: Deployment
+      check:
+        rule: |
+          health_status = "Healthy"
+          if obj.status.readyReplicas == obj.spec.replicas {
+            health_status = "Healthy"
+          } else if obj.status.unavailableReplicas > 0 {
+            health_status = "Progressing"
+          } else {
+            health_status = "Degraded"
+          }
+  
+  # Ignore differences that are expected (e.g., auto-generated fields)
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/replicas
+    - group: ""
+      kind: ConfigMap
+      jsonPointers:
+        - /metadata/annotations
+  
+  # Revision history limit
+  revisionHistoryLimit: 10
